@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.scss"
 import { useState } from "react";
 function SearchFilter() {
   const [inputValue, setInputValue] = useState("");

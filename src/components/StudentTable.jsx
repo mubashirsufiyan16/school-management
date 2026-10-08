@@ -1,9 +1,17 @@
 import studentData from "../data/StudentData";
-import "../App.css";
-import { useState } from "react";
+import "../../App.scss"
+import { useState,useEffect } from "react";
 import SearchFilter from "./SearchFilter";
 
 function StudentTable() {
+  const [student,setStudent]=useState([])
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("filtereddata")) || [];
+
+    setStudent(data);
+    console.log(student)
+  }, []);
   const [error, setError] = useState({
     name: "",
     course: "",
